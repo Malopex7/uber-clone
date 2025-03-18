@@ -1,11 +1,10 @@
 # Uber Clone
 
-A React Native Uber clone built with Expo and Tailwind CSS.
+A React Native Uber clone built with Expo.
 
 ## Features
 
 - Built with Expo and React Native
-- Styled with Tailwind CSS (NativeWind)
 - TypeScript support
 - File-based routing with Expo Router
 - Dark mode support
@@ -38,7 +37,6 @@ npm start
 - React Native
 - Expo
 - TypeScript
-- Tailwind CSS (NativeWind)
 - Expo Router
 - React Navigation
 

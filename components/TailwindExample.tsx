@@ -1,28 +1,79 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function TailwindExample() {
   return (
-    <View className="p-4 flex-1 items-center justify-center bg-white dark:bg-gray-800">
-      <Text className="text-xl font-bold text-black dark:text-white mb-4">
+    <View style={styles.container}>
+      <Text style={styles.title}>
         Tailwind CSS Example
       </Text>
       
-      <View className="flex-row space-x-2 mb-4">
-        <View className="w-24 h-24 bg-blue-500 rounded-lg items-center justify-center">
-          <Text className="text-white font-bold">Box 1</Text>
+      <View style={styles.boxContainer}>
+        <View style={[styles.box, styles.blueBox]}>
+          <Text style={styles.boxText}>Box 1</Text>
         </View>
-        <View className="w-24 h-24 bg-green-500 rounded-lg items-center justify-center">
-          <Text className="text-white font-bold">Box 2</Text>
+        <View style={[styles.box, styles.greenBox]}>
+          <Text style={styles.boxText}>Box 2</Text>
         </View>
-        <View className="w-24 h-24 bg-purple-500 rounded-lg items-center justify-center">
-          <Text className="text-white font-bold">Box 3</Text>
+        <View style={[styles.box, styles.purpleBox]}>
+          <Text style={styles.boxText}>Box 3</Text>
         </View>
       </View>
       
-      <TouchableOpacity className="bg-blue-500 py-2 px-4 rounded-lg active:bg-blue-700">
-        <Text className="text-white font-semibold">Tap Me</Text>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Tap Me</Text>
       </TouchableOpacity>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 16,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'black',
+    marginBottom: 16,
+  },
+  boxContainer: {
+    flexDirection: 'row',
+    marginBottom: 16,
+    gap: 8,
+  },
+  box: {
+    width: 96,
+    height: 96,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  blueBox: {
+    backgroundColor: '#3b82f6',
+  },
+  greenBox: {
+    backgroundColor: '#22c55e',
+  },
+  purpleBox: {
+    backgroundColor: '#a855f7',
+  },
+  boxText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  button: {
+    backgroundColor: '#3b82f6',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: '600',
+  },
+});
